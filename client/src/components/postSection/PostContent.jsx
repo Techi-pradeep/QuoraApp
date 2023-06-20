@@ -1,14 +1,16 @@
-import { Avatar } from "@mui/material";
+
+
+import { Avatar } from "@chakra-ui/react";
+// react-icons
 import { RxCross2 } from "react-icons/rx";
 import { AiOutlineMessage } from "react-icons/ai";
-// import { TfiShare} from "react-icons/tf";
 import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
 import { BsThreeDots, BsShare } from "react-icons/bs";
 
 const PostContent = () => {
   return (
     <>
-      <div className=" bg-white mt-4 pt-4 ">
+      <div className="pt-4 mt-1 bg-white ">
         <div className="flex justify-between mx-2">
           <div className="flex ">
             <Avatar />
@@ -43,16 +45,15 @@ const PostContent = () => {
           />
         </div>
 
-        <div className="flex m-2 pb-2 justify-between">
-          <div className="flex  ">
+        <div className="flex justify-between pb-2 m-2">
+          <div className="flex ">
             <div className="pl-0">
               <TbArrowBigUp className="focus:text-green-500 hover:cursor-pointer" />
             </div>
 
             <div className="pl-4">
               <TbArrowBigDown
-                className="focus:text-red-600
-          hover:cursor-pointer"
+                className="focus:text-red-600 hover:cursor-pointer"
               />
             </div>
 
@@ -70,7 +71,7 @@ const PostContent = () => {
         </div>
       </div>
 
-      <div className=" bg-white mt-4 pt-4 ">
+      <div className="pt-4 mt-4 bg-white ">
         <div className="flex justify-between mx-2">
           <div className="flex ">
             <Avatar />
@@ -104,16 +105,15 @@ const PostContent = () => {
           />
         </div>
 
-        <div className="flex m-2 pb-2 justify-between">
-          <div className="flex  ">
+        <div className="flex justify-between pb-2 m-2">
+          <div className="flex ">
             <div className="pl-0">
               <TbArrowBigUp className="focus:text-green-500 hover:cursor-pointer" />
             </div>
 
             <div className="pl-4">
               <TbArrowBigDown
-                className="focus:text-red-600
-          hover:cursor-pointer"
+                className="focus:text-red-600 hover:cursor-pointer"
               />
             </div>
 
@@ -130,7 +130,7 @@ const PostContent = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-white mt-4 pt-4 ">
+      <div className="pt-4 mt-4 bg-white ">
         <div className="flex justify-between mx-2">
           <div className="flex ">
             <Avatar />
@@ -160,20 +160,19 @@ const PostContent = () => {
           <img
             src="https://images.pexels.com/photos/15030935/pexels-photo-15030935/free-photo-of-woman-in-dress-walking-in-sand-dunes.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
             alt=""
-            className=" object-cover w-full"
+            className="object-cover w-full "
           />
         </div>
 
-        <div className="flex m-2 pb-2 justify-between">
-          <div className="flex  ">
+        <div className="flex justify-between pb-2 m-2">
+          <div className="flex ">
             <div className="pl-0">
               <TbArrowBigUp className="focus:text-green-500 hover:cursor-pointer" />
             </div>
 
             <div className="pl-4">
               <TbArrowBigDown
-                className="focus:text-red-600
-          hover:cursor-pointer"
+                className="focus:text-red-600 hover:cursor-pointer"
               />
             </div>
 
