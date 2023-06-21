@@ -71,7 +71,7 @@ const PostContent = () => {
         </div>
       </div>
 
-      <div className="pt-4 mt-4 bg-white ">
+      <div className="pt-4 mt-4 bg-white PostBox">
         <div className="flex justify-between mx-2">
           <div className="flex ">
             <Avatar />
