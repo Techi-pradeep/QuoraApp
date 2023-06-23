@@ -1,8 +1,8 @@
 #  Project is under modification for implementing more features
 # Technologies/Tools/Libraries
 
-Firebase : email and password authentication
-React-hook-form: SignUp and Login Modal
-ChakraUI: React Components
-Tailwind: Designing and responsiveness
+1.Firebase : email and password authentication
+2.React-hook-form: SignUp and Login Modal
+3.ChakraUI: React Components
+4.Tailwind: Designing and responsiveness
 

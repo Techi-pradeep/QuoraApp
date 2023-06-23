@@ -1,5 +1,3 @@
-
-
 import { Avatar } from "@chakra-ui/react";
 // react-icons
 import { RxCross2 } from "react-icons/rx";
@@ -52,9 +50,7 @@ const PostContent = () => {
             </div>
 
             <div className="pl-4">
-              <TbArrowBigDown
-                className="focus:text-red-600 hover:cursor-pointer"
-              />
+              <TbArrowBigDown className="focus:text-red-600 hover:cursor-pointer" />
             </div>
 
             <div className="pl-4">
@@ -96,7 +92,8 @@ const PostContent = () => {
 
         <div>
           <p className="p-2 text-justify">
-            Home is the personality of a person which represent ourself in front of society.
+            Home is the personality of a person which represent ourself in front
+            of society.
           </p>
           <img
             src="https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -112,9 +109,7 @@ const PostContent = () => {
             </div>
 
             <div className="pl-4">
-              <TbArrowBigDown
-                className="focus:text-red-600 hover:cursor-pointer"
-              />
+              <TbArrowBigDown className="focus:text-red-600 hover:cursor-pointer" />
             </div>
 
             <div className="pl-4">
@@ -155,7 +150,8 @@ const PostContent = () => {
 
         <div className="">
           <p className="p-2 text-justify">
-          Never lose hope when situation is worse You can find water in the desert.
+            Never lose hope when situation is worse You can find water in the
+            desert.
           </p>
           <img
             src="https://images.pexels.com/photos/15030935/pexels-photo-15030935/free-photo-of-woman-in-dress-walking-in-sand-dunes.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
@@ -171,9 +167,7 @@ const PostContent = () => {
             </div>
 
             <div className="pl-4">
-              <TbArrowBigDown
-                className="focus:text-red-600 hover:cursor-pointer"
-              />
+              <TbArrowBigDown className="focus:text-red-600 hover:cursor-pointer" />
             </div>
 
             <div className="pl-4">

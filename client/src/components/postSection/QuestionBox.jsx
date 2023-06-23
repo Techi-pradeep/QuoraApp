@@ -6,17 +6,25 @@ import { SlPencil } from "react-icons/sl";
 
 
 import { useState } from 'react';
+import { Button } from '@chakra-ui/react';
+import PostModal from "./Post/PostModal";
 
 const QuestionBox = () => {
   const [inputValue, setInputValue] = useState('');
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  const handleSubmit = () => {
-    // Handle form submission logic here
-    console.log('Form submitted:', inputValue);
+
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -44,7 +52,8 @@ const QuestionBox = () => {
         </div>
         <div className="flex items-center p-2 rounded cursor-pointer ring-2">
           <SlPencil />
-          <button onClick={handleSubmit}>Post</button>
+          <Button onClick={handleOpenModal}>Post</Button>
+          <PostModal onClose={handleCloseModal}/>
         </div>
       </div>
     </div>
