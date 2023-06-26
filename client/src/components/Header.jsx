@@ -7,12 +7,12 @@ import { RxTable } from "react-icons/rx";
 import { SlNote, SlGlobe, SlPeople } from "react-icons/sl";
 import { MdNotificationsNone } from "react-icons/md";
 // chakra ui modal fro signIn and login and Logout
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Button } from "@chakra-ui/react";
 import AuthModal from "./AuthModal";
 
 import AuthContext from "../auth/AuthContext";
+import Cookies from "js-cookie";
 
-import Cookies from "js-cookie"
 const Header = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -21,17 +21,11 @@ const Header = () => {
 
   const handleLogout = () => {
     setAuthenticated(false);
-    Cookies.remove("firbase_token")
+    Cookies.remove("firbase_token");
   };
 
   useEffect(() => {
     authenticated ? setIsModalOpen(false) : setIsModalOpen(true);
-    //   const timeout = setTimeout(() => {
-    //     setIsModalOpen(true);
-    //   }, 2000);
-
-    //   return () => clearTimeout(timeout);
-    //
   }, [authenticated]);
 
   return (
@@ -70,7 +64,7 @@ const Header = () => {
       </button>
 
       {authenticated ? (
-        <Button onClick={handleLogout} className="danger">
+        <Button onClick={handleLogout} colorScheme="red" variant="outline">
           Log Out
         </Button>
       ) : (

@@ -1,7 +1,8 @@
-
-// ModalForm.jsx
-
-import { useForm } from 'react-hook-form';
+import { useState, useEffect } from "react";
+// react-hook-form
+import { useForm } from "react-hook-form";
+// ChakraUI
+import { useDisclosure } from "@chakra-ui/hooks";
 import {
   Modal,
   ModalOverlay,
@@ -14,45 +15,96 @@ import {
   FormControl,
   FormLabel,
   Input,
-} from '@chakra-ui/react';
+  // FormErrorMessage,
+} from "@chakra-ui/react";
 
-const PostModal = ({ isOpen, onClose }) => {
-  const { register, handleSubmit } = useForm();
+import { PostContext } from "./PostContext";
+import { useContext } from "react";
 
-  const onSubmit = (data) => {
-    console.log(data); // Handle form submission here
-    onClose(); // Close the modal after form submission
+// import "PostModal" component from where you want to show the modal with inbuilt Post Button
+const PostModal = () => {
+  // inbuilt feature of closing and opening modal
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  // useForm --react-hook-form
+  const {
+    register,
+    handleSubmit,
+    // formState: { errors },
+    reset,
+  } = useForm();
+  //
+  const { setPostBoxes } = useContext(PostContext);
+
+  const [imageUrl, setImageUrl] = useState(null);
+
+  const onImageUpload = (image) => {
+    const url = URL.createObjectURL(image);
+    setImageUrl(url);
   };
 
+  const onSubmitData = (data) => {
+    // image upload logic
+    if (data.imageUrl) {
+      setImageUrl(data.imageUrl);  
+    } else {
+      onImageUpload(data.image[0]);
+    }
+    // setPostBoxes({
+    //   ...data,
+    //   imageUrl,
+    // });
+    onClose();
+    reset();
+  };
+
+  useEffect(() => {
+    return () => {
+      URL.revokeObjectURL(imageUrl);
+    };
+  }, [imageUrl]);
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Create Post</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <FormControl>
-              <FormLabel>Post Content</FormLabel>
-              <Input {...register('postContent')} />
-            </FormControl>
+    <>
+      <Button onClick={onOpen}>Post</Button>
 
-            <FormControl>
-              <FormLabel>Image URL</FormLabel>
-              <Input {...register('imageUrl')} />
-            </FormControl>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Create Post</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <form onSubmit={handleSubmit(onSubmitData)}>
+              <FormControl>
+                <FormLabel>Name</FormLabel>
+                <Input {...register("Name")} />
+              </FormControl>
 
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} type="submit">
-                Save
-              </Button>
-              <Button onClick={onClose}>Cancel</Button>
-            </ModalFooter>
-          </form>
-        </ModalBody>
-      </ModalContent>
-    </Modal>
+              <FormControl>
+                <FormLabel>Title</FormLabel>
+                <Input {...register("Title")} />
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>Description</FormLabel>
+                <Input {...register("Description")} />
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>Image URL</FormLabel>
+                <Input {...register("imageUrl")} />
+              </FormControl>
+
+              <ModalFooter>
+                <Button colorScheme="blue" mr={3} type="submit">
+                  Save
+                </Button>
+                <Button onClick={onClose}>Cancel</Button>
+              </ModalFooter>
+            </form>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 
-export default PostModal;
+export { PostModal };

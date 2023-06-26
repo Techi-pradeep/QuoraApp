@@ -1,3 +1,5 @@
+import { useContext } from "react";
+
 import { Avatar } from "@chakra-ui/react";
 // react-icons
 import { RxCross2 } from "react-icons/rx";
@@ -5,9 +7,68 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
 import { BsThreeDots, BsShare } from "react-icons/bs";
 
+
+import { PostContext } from "./Post/PostContext";
 const PostContent = () => {
+  const{postBoxes}= useContext(PostContext);
+  console.log("postBoxes in PostContent: " , postBoxes)
   return (
     <>
+      {postBoxes && postBoxes.map((postBox, index) => (
+  <div className="pt-4 mt-1 bg-white PostBox" key={index}>
+    {/* Avatar */}
+    <div className="flex justify-between mx-2 ">
+      <div className="flex ">
+        <Avatar />
+        <div>
+          <div className="flex ">
+            <div className="flex pl-4">
+              <h4>{postBox.Name}</h4>
+              <a href="#" className="pl-2 text-blue-500">
+                follow
+              </a>
+            </div>
+          </div>
+          <div className="flex pl-4">
+            <p>{postBox.Description}</p>
+            <small>Timestamp</small>
+          </div>
+        </div>
+      </div>
+
+      <RxCross2 className="pr-0" />
+    </div>
+
+    {/* Image */}
+    {postBox.imageUrl && (
+      <div>
+        <img 
+          src={postBox.imageUrl} 
+          alt={postBox.Title} 
+          className="object-cover w-full"
+        />
+      </div>  
+    )}
+
+    {/* Actions */}
+    <div className="flex justify-between pb-2 m-2">
+      {/* Actions */}  
+      <div className="flex">
+        {/* Icons */}
+      </div>
+      <div>
+        <BsThreeDots />
+      </div>
+    </div>
+  </div>
+))}
+
+
+
+
+
+        
+      {/* =================================================== */}
       <div className="pt-4 mt-1 bg-white PostBox">
         <div className="flex justify-between mx-2 ">
           <div className="flex ">

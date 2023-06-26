@@ -7,10 +7,10 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-   <AuthProvider>
-   <ChakraProvider>
-      <App />
+    <ChakraProvider>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </ChakraProvider>
-   </AuthProvider>
   </React.StrictMode>
 );

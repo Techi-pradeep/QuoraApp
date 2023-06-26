@@ -1,17 +1,15 @@
+import { useState } from 'react';
+
 import { Avatar } from "@chakra-ui/react";
 import { BsQuestionOctagon, BsPencilSquare } from "react-icons/bs";
 import { SlPencil } from "react-icons/sl";
 
-
-
-
-import { useState } from 'react';
-import { Button } from '@chakra-ui/react';
-import PostModal from "./Post/PostModal";
+// import { Button } from '@chakra-ui/react';
+import{ PostModal} from "./Post/PostModal";
 
 const QuestionBox = () => {
   const [inputValue, setInputValue] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -19,13 +17,13 @@ const QuestionBox = () => {
 
 
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+  // const handleOpenModal = () => {
+  //   setIsModalOpen(true);
+  // };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
   return (
     <div className="flex flex-col bg-white">
@@ -52,8 +50,8 @@ const QuestionBox = () => {
         </div>
         <div className="flex items-center p-2 rounded cursor-pointer ring-2">
           <SlPencil />
-          <Button onClick={handleOpenModal}>Post</Button>
-          <PostModal onClose={handleCloseModal}/>
+          {/* Pop-up on Post button */}
+          <PostModal />
         </div>
       </div>
     </div>
