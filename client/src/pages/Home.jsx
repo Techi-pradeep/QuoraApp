@@ -3,11 +3,10 @@ import MainBody from "./MainBody";
 const Home = () => {
   return (
     <>
-    
-      <Header/>
-     <div className=" bg-slate-200 min-h-full">
-     <MainBody/>
-     </div>
+      <Header />
+      <div className="min-h-full  bg-slate-200">
+        <MainBody />
+      </div>
     </>
   );
 };

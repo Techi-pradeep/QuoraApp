@@ -45,7 +45,7 @@ const PostModal = () => {
   const onSubmitData = (data) => {
     // image upload logic
     if (data.imageUrl) {
-      setImageUrl(data.imageUrl);  
+      setImageUrl(data.imageUrl);
     } else {
       onImageUpload(data.image[0]);
     }
@@ -78,17 +78,17 @@ const PostModal = () => {
                 <Input {...register("Name")} />
               </FormControl>
 
-              <FormControl>
+              <FormControl className="mt-4">
                 <FormLabel>Title</FormLabel>
                 <Input {...register("Title")} />
               </FormControl>
 
-              <FormControl>
+              <FormControl className="mt-4">
                 <FormLabel>Description</FormLabel>
                 <Input {...register("Description")} />
               </FormControl>
 
-              <FormControl>
+              <FormControl className="mt-4">
                 <FormLabel>Image URL</FormLabel>
                 <Input {...register("imageUrl")} />
               </FormControl>
